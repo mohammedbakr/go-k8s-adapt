@@ -21,11 +21,14 @@
 
 # go-k8s-adapt
 
-- <Placeholder, fill in at the next PR>
+- Adaptation service integrating with processing. This service will listen on new messages and triger rebuild
 
 ### Steps of processing
 
-- <Placeholder, fill in at the next PR>
+- A file a sent to queue by the api
+- That file gets downloaded on minio
+- A rebuild is trigerred
+- Once rebuild is completed the report is uploaded again to minio and published to the reply queue
 
 ## Info 
 - <Placeholder, fill in at the next PR>
@@ -33,16 +36,17 @@
 
 ## Build
 
-- <Placeholder, fill in at the next PR>
+- Follow the steps bellow to build the code
 ```
-code placeholder
+cd cmd
+go build .
 ```
 
 
 ### Docker build
-- <Placeholder, fill in at the next PR>
+- To perform a docker build, run
 ```
-code placeholder
+docker build -t go-k8s-adapt .
 ```
 
 ## Test
